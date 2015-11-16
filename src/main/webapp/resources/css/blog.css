@@ -1,0 +1,157 @@
+@CHARSET "ISO-8859-1";
+/** Reset Start **/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
+	blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn,
+	em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var,
+	b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend,
+	table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas,
+	details, embed, figure, figcaption, footer, header, hgroup, menu, nav,
+	output, ruby, section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup,
+	menu, nav, section {
+	display: block;
+}
+
+body {
+	line-height: 1;
+	
+}
+
+ol, ul {
+	list-style: none;
+}
+
+
+blockquote, q {
+	quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+	content: '';
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/** Reset End **/
+body {
+	background-color: #C0C0C0;
+}
+
+.error {
+	padding: 15px;
+	margin-bottom: 20px;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	color: #a94442;
+	background-color: #f2dede;
+	border-color: #ebccd1;
+}
+
+.msg {
+	padding: 15px;
+	margin-bottom: 20px;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	color: #31708f;
+	background-color: #d9edf7;
+	border-color: #bce8f1;
+}
+
+#login-box {
+	width: 300px;
+	padding: 20px;
+	margin: 100px auto;
+	background: #fff;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border: 1px solid #000;
+}}
+
+
+/* GENERAL ELEMENTS
+-----------------------------------------------------------*/
+* { margin: 0; padding: 0; }
+body { font-family: Arial, Helvetica, sans-serif; }
+.centering { margin: 0 auto; width: 1000px; }
+html, body { height: 100%; }
+#container { min-height: 100%; width: 100%; }
+#main { clear: both; overflow: auto; margin-bottom: 40px; padding-bottom: 487px; }
+/*Opera Fix*/
+body:before { content:""; height:100%; float:left; width:0; margin-top:-32767px; }
+/*---------------------------------------------------------*/
+
+/* HEADER
+-----------------------------------------------------------*/
+header { background: #000; float: left; width: 100%; }
+img#logo { border: none; margin: 33px 0 0 0; }
+header nav { float: right; font-size: 12px; font-weight: bold; }
+header nav ul { list-style: none; padding: 31px 0 0 0; }
+header nav li { float: left; height: 29px; }
+header nav li a { color: #FFF; display: block; padding: 7px 17px 10px; text-decoration: none; }
+header li:hover { background: #42b3e7; border-radius: 5px; -moz-border-radius: 5px; }
+header nav li a:hover { color: #000; }
+header-login { color: white; float: right;}
+.language{
+	float: right;
+	color:white;
+}
+/*---------------------------------------------------------*/
+
+/* CONTENT
+-----------------------------------------------------------*/
+#content { float: left; padding: 0 0 40px 0; width: 625px; }
+.post { float: left; padding: 25px 0 0 0; }
+.post h2 { font-size: 24px; font-weight: bold; margin: 0 0 10px 0; padding: 0; }
+.post h2 a { color: #01567e; text-decoration: none; }
+.post h2 a:hover { color: #000; }
+div.post-title { float: left; width: 585px; }
+div.comment-box { background: url(images/comment_bubble.png) no-repeat; height: 31px; float: right; margin: 3px 0 0 0; padding: 3px 0 0 0; text-align: center; width: 34px; }
+div.comment-box a { color: #FFF; font-size: 14px; font-weight: bold; text-decoration: none; }
+div.comment-box a:hover { color: #000; }
+.post img.thumb { border: 1px solid #abe4ff; float: left; margin: 0 10px 0 0; }
+p.date{ border-top: 4px solid #caeeff; clear: both; color: #01293c; font-size: 13px; line-height: 22px; margin: 10px 0; width: 100%; }
+p.date a { color: #01293c; text-decoration: none; }
+p.date a:hover { text-decoration: underline; }
+#content p { color: #66686a; font-size: 13px; line-height: 20px; text-align: justify; }
+#content .post div { overflow: hidden; }
+a.more-link { color: #01567e; font-size: 13px; font-weight: bold; }
+a.more-link:hover { color: #000; }
+span.fullpost { clear: both; float: right; }
+#content hr { border: none; background: #caeeff; float: left; height: 4px; margin: 10px 0 0 0; width: 100%; }
+/*---------------------------------------------------------*/
+
+/* ASIDE
+-----------------------------------------------------------*/
+aside { background: #012b3e; border-radius: 0 0 10px 10px; float: left; font-size: 12px; margin: 0 0 0 75px; -moz-border-radius: 0 0 10px 10px; padding: 0 0 20px 0; width: 300px; }
+aside h2 { color: #FFF; float: left; font-size: 18px; font-weight: bold; padding: 20px; }
+#searchbox { background: #FFF; border: none; border-radius: 5px 0 0 5px; float: left; height: 30px; margin: 0 0 0 20px; -moz-border-radius: 5px 0 0 5px; padding: 0 0 0 10px; width: 226px; }
+#searchbutton { background: url(images/searchbutton.png) no-repeat; border: none; cursor: pointer; float: left; height: 30px; width: 24px; }
+aside ul { border-bottom: 1px dotted #015278; float: left; list-style: none; }
+aside li { border-top: 1px dotted #015278; float: left; height: 35px; line-height: 35px; width: 300px;}
+aside li:hover { background: #013953; }
+aside ul li a { color: #33a4d8; float: left; padding: 0 0 0 20px; text-decoration: none; }
+aside ul li a:hover { color: #FFF; }
+aside div.bubbleInfo { position: relative; z-index: 100; }
+aside p.popup { background: url(images/nav-bubble.png) no-repeat left top; color: #FFF; display: none; height: 47px; line-height: 15px; position: absolute; padding: 7px 30px 0 10px; width: 247px; }
+aside ul.recent-comment li { height: auto; line-height: 9px; }
+aside ul.recent-comment li a img { border: none; float: left; padding: 0 10px 10px 10px; }
+aside ul.recent-comment li a { display: block; float: none; margin: 10px 0 12px 0; padding: 0; }
+aside ul.recent-comment li .commenter { color: #015278; }
+/*---------------------------------------------------------*/
+
+/* FOOTER
+-----------------------------------------------------------*/
+footer { background: url(../images/footer_bg.jpg) repeat-x; clear: both; float: left; position: relative; width: 100%; }
+/*---------------------------------------------------------*/
