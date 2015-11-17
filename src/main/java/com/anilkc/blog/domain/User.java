@@ -1,6 +1,8 @@
 package com.anilkc.blog.domain;
 
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 import javax.persistence.Basic;
 import javax.persistence.CascadeType;
@@ -11,7 +13,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.Lob;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.SecondaryTable;
@@ -21,7 +25,11 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 import javax.persistence.UniqueConstraint;
+import javax.validation.Valid;
+import javax.validation.constraints.Size;
 
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.web.multipart.MultipartFile;
 
 @Entity
@@ -33,9 +41,21 @@ public class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
+
+	@NotEmpty
+	@Size(min = 4, max = 50)
 	private String firstName;
+
+	@NotEmpty
+	@Size(min = 4, max = 50)
 	private String lastName;
+
+	@NotEmpty
+	@Email
 	private String email;
+
+	@NotEmpty
+	@Size(min = 4, max = 50)
 	private String displayName;
 	private Boolean isDeleted;
 
@@ -45,6 +65,7 @@ public class User {
 	@Lob
 	@Basic(fetch = FetchType.LAZY)
 	@Column(table = "user_profiles")
+	@NotEmpty
 	private String profile;
 
 	@Temporal(TemporalType.TIMESTAMP)
@@ -52,7 +73,14 @@ public class User {
 
 	@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@JoinColumn(name = "credentialId")
+	@Valid
 	private Credential credential;
+
+	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	@JoinTable(name = "subscriptions", joinColumns = {
+			@JoinColumn(name = "userId", referencedColumnName = "id") }, inverseJoinColumns = {
+					@JoinColumn(name = "tagId", referencedColumnName = "id") })
+	private Set<Tag> tags = new HashSet<Tag>(0);
 
 	@Transient
 	private MultipartFile userImage;
@@ -156,6 +184,18 @@ public class User {
 
 	public void setUserImage(MultipartFile userImage) {
 		this.userImage = userImage;
+	}
+
+	public void addTag(Tag tag) {
+		this.tags.add(tag);
+	}
+
+	public Set<Tag> getTags() {
+		return tags;
+	}
+
+	public void setTags(Set<Tag> tags) {
+		this.tags = tags;
 	}
 
 }

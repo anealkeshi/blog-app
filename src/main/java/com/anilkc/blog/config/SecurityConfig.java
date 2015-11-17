@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.encoding.PlaintextPasswordEncoder;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -21,8 +22,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	UserDetailsService credentialService;
 
 	@Autowired
-	public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
+	@Bean
+	public AuthenticationManager configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
 		auth.userDetailsService(credentialService).passwordEncoder(passwordEncoder());
+		return authenticationManager();
 	}
 
 	@Override
@@ -51,5 +54,4 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		PlaintextPasswordEncoder encoder = new PlaintextPasswordEncoder();
 		return encoder;
 	}
-
 }

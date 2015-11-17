@@ -1,5 +1,6 @@
 package com.anilkc.blog.domain;
 
+import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -22,7 +23,10 @@ public class Tag {
 	private String tagName;
 
 	@ManyToMany(cascade = CascadeType.PERSIST, fetch = FetchType.LAZY, mappedBy = "tags")
-	private Set<Post> posts;
+	private Set<Post> posts = new HashSet<Post>();
+
+	@ManyToMany(cascade = CascadeType.PERSIST, fetch = FetchType.LAZY, mappedBy = "tags")
+	private Set<User> users = new HashSet<User>();
 
 	public Tag() {
 		// TODO Auto-generated constructor stub
@@ -55,6 +59,18 @@ public class Tag {
 
 	public void setPosts(Set<Post> posts) {
 		this.posts = posts;
+	}
+
+	public void addUser(User user) {
+		this.users.add(user);
+	}
+
+	public Set<User> getUsers() {
+		return users;
+	}
+
+	public void setUsers(Set<User> users) {
+		this.users = users;
 	}
 
 }

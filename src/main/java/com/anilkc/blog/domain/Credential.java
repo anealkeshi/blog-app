@@ -3,6 +3,7 @@ package com.anilkc.blog.domain;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -12,15 +13,25 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
+import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
 @Table(name = "credentials", uniqueConstraints = { @UniqueConstraint(columnNames = { "username" }) })
 public class Credential {
 
 	private long id;
+
+	@NotEmpty
+	@Size(min = 4, max = 50)
 	private String username;
+
+	@NotEmpty
+	@Size(min = 4, max = 50)
 	private String password;
 	private boolean enabled;
+
 	private Set<UserRole> userRole = new HashSet<UserRole>(0);
 
 	public Credential() {
@@ -76,13 +87,17 @@ public class Credential {
 		this.enabled = enabled;
 	}
 
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "user")
 	public Set<UserRole> getUserRole() {
 		return this.userRole;
 	}
 
 	public void setUserRole(Set<UserRole> userRole) {
 		this.userRole = userRole;
+	}
+
+	public void addUserRole(UserRole userRole) {
+		this.userRole.add(userRole);
 	}
 
 }

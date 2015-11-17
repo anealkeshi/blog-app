@@ -3,28 +3,27 @@
 <%@ taglib prefix="security" uri="http://www.springframework.org/security/tags"%>
 
 <div class="centering">
-	<a href="<spring:url value="/"></spring:url>"> <img src='<spring:url value="/images/blog.png"></spring:url>'
-		alt="Blog" height="50" width="100">
-	</a>
-	<security:authorize access="isAuthenticated()">
-					
-  					Welcome username :  ${pageContext.request.userPrincipal.name}
-  					
-  					<br />
-		<a href='<spring:url value="/doLogout"></spring:url>'>Logout</a>
+	<div style="color: white;">
+		<a href="<spring:url value="/"></spring:url>"> <img src='<spring:url value="/images/blog.png"></spring:url>'
+			alt="Blog" height="50" width="100">
+		</a>
+		<security:authorize access="isAuthenticated()">
+			 Welcome ${pageContext.request.userPrincipal.name}!! <a href='<spring:url value="/doLogout"></spring:url>'>Logout</a>
+		</security:authorize>
 
-	</security:authorize>
-	<security:authorize access="isAnonymous()">
-		<div class="header-login" style="color: #339900">
-			<a href="<spring:url value="/registration"/>"> <spring:message code="register.add.btn" />
+		<security:authorize access="isAnonymous()">
+			<a href="<spring:url value="/register"/>"> <spring:message code="register.add.btn" />
 			</a>| <a href="<spring:url value="/login"></spring:url>"><spring:message code="login.btn">
 				</spring:message></a>
-		</div>
-	</security:authorize>
+		</security:authorize>
+	</div>
+
+
 	<div class="language">
 		<spring:message code="language" />
 		: <a href="?lang=en_US">English</a> | <a href="?lang=np_NP">Nepali</a>
 	</div>
+
 	<nav>
 		<ul>
 			<li><a href="#"><spring:message code="nav.home" /></a></li>

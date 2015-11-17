@@ -1,6 +1,7 @@
 package com.anilkc.blog.domain;
 
 import java.util.Date;
+import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.Basic;
@@ -47,7 +48,7 @@ public class Post {
 	@JoinTable(name = "posts_tags", joinColumns = {
 			@JoinColumn(name = "postId", referencedColumnName = "id") }, inverseJoinColumns = {
 					@JoinColumn(name = "tagId", referencedColumnName = "id") })
-	private Set<Tag> tags;
+	private Set<Tag> tags = new HashSet<Tag>();
 
 	@Enumerated(EnumType.STRING)
 	private PostStatus status;
@@ -66,11 +67,10 @@ public class Post {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Post(String title, String content, Set<Tag> tags, User author) {
+	public Post(String title, String content, User author) {
 		super();
 		this.title = title;
 		this.content = content;
-		this.tags = tags;
 		this.author = author;
 	}
 
