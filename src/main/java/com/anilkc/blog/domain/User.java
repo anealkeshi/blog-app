@@ -43,11 +43,11 @@ public class User {
 	private long id;
 
 	@NotEmpty
-	@Size(min = 4, max = 50)
+	@Size(min = 2, max = 50)
 	private String firstName;
 
 	@NotEmpty
-	@Size(min = 4, max = 50)
+	@Size(min = 2, max = 50)
 	private String lastName;
 
 	@NotEmpty
@@ -76,7 +76,7 @@ public class User {
 	@Valid
 	private Credential credential;
 
-	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@JoinTable(name = "subscriptions", joinColumns = {
 			@JoinColumn(name = "userId", referencedColumnName = "id") }, inverseJoinColumns = {
 					@JoinColumn(name = "tagId", referencedColumnName = "id") })
@@ -197,5 +197,16 @@ public class User {
 	public void setTags(Set<Tag> tags) {
 		this.tags = tags;
 	}
+
+	public String getStatus() {
+		if (this.credential.isEnabled() == true) {
+			return "Active";
+		} else {
+			return "Not ACtive";
+		}
+	}
+
+	@Transient
+	private String status;
 
 }

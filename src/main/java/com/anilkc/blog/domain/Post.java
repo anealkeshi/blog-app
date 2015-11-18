@@ -1,7 +1,9 @@
 package com.anilkc.blog.domain;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.Basic;
@@ -19,12 +21,15 @@ import javax.persistence.JoinTable;
 import javax.persistence.Lob;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.SecondaryTable;
 import javax.persistence.SecondaryTables;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+
+import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
 @Table(name = "posts")
@@ -36,9 +41,11 @@ public class Post {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 
+	@NotEmpty
 	@Column(length = 500)
 	private String title;
 
+	@NotEmpty
 	@Lob
 	@Basic(fetch = FetchType.LAZY)
 	@Column(table = "post_contents")
@@ -48,7 +55,7 @@ public class Post {
 	@JoinTable(name = "posts_tags", joinColumns = {
 			@JoinColumn(name = "postId", referencedColumnName = "id") }, inverseJoinColumns = {
 					@JoinColumn(name = "tagId", referencedColumnName = "id") })
-	private Set<Tag> tags = new HashSet<Tag>();
+	private Set<Tag> tags;
 
 	@Enumerated(EnumType.STRING)
 	private PostStatus status;
@@ -62,8 +69,13 @@ public class Post {
 	@ManyToOne(cascade = CascadeType.PERSIST, fetch = FetchType.LAZY)
 	@JoinColumn(name = "authorId")
 	private User author;
+	
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	private List<Comment> comments;
 
 	public Post() {
+		tags = new HashSet<Tag>();
+		comments = new ArrayList<>();
 		// TODO Auto-generated constructor stub
 	}
 
@@ -72,6 +84,8 @@ public class Post {
 		this.title = title;
 		this.content = content;
 		this.author = author;
+		tags = new HashSet<Tag>();
+		comments = new ArrayList<>();
 	}
 
 	public long getId() {
@@ -137,5 +151,33 @@ public class Post {
 	public void setAuthor(User author) {
 		this.author = author;
 	}
+
+	public void addTag(Tag tag) {
+		this.tags.add(tag);
+	}
+	
+	public void addComment(Comment comment){
+		this.comments.add(comment);
+	}
+
+	public void removeComment(Comment comment){
+		this.comments.remove(comment);
+	}
+	
+	public List<Comment> getComments() {
+		return comments;
+	}
+
+	public void setComments(List<Comment> comments) {
+		this.comments = comments;
+	}
+
+	@Override
+	public String toString() {
+		return "Post [id=" + id + ", title=" + title + ", content=" + content + ", tags=" + tags + ", status=" + status
+				+ ", createdDate=" + createdDate + ", updatedDate=" + updatedDate + ", author=" + author + "]";
+	}
+	
+	
 
 }

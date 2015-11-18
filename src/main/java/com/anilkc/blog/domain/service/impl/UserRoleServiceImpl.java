@@ -1,5 +1,7 @@
 package com.anilkc.blog.domain.service.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,6 +18,7 @@ public class UserRoleServiceImpl implements UserRoleService {
 	public UserRole addUserRole(UserRole userRole) {
 		return userRoleDao.add(userRole);
 	}
+
 	
 
 }

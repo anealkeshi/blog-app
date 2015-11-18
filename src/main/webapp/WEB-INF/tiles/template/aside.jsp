@@ -3,6 +3,7 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="security"
 	uri="http://www.springframework.org/security/tags"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <aside>
 	<h2>Search</h2>
 	<div>
@@ -85,7 +86,7 @@
 	<ul class="recent-comment">
 		<li>
 			<div class="bubbleInfo">
-				<a href="#"><img src="images/avatar.gif"></a> <a href="#"
+				<a href="#"><img src='<c:url value="/images/avatar.gif" />'></a> <a href="#"
 					class="trigger">Horizontal Nav with CSS</a> <span class="commenter">-
 					Thomas Larangeira @ Sept 10, 2010</span>
 				<p class="popup">"This is one of the most recent comments to a
@@ -94,7 +95,7 @@
 		</li>
 		<li>
 			<div class="bubbleInfo">
-				<a href="#"><img src="images/avatar.gif"></a> <a href="#"
+				<a href="#"><img src='<c:url value="/images/avatar.gif" />'></a> <a href="#"
 					class="trigger">Horizontal Nav with CSS</a> <span class="commenter">-
 					Thomas Larangeira @ Sept 10, 2010</span>
 				<p class="popup">"This is one of the most recent comments to a
@@ -103,7 +104,7 @@
 		</li>
 		<li>
 			<div class="bubbleInfo">
-				<a href="#"><img src="images/avatar.gif"></a> <a href="#"
+				<a href="#"><img src='<c:url value="/images/avatar.gif" />'></a> <a href="#"
 					class="trigger">Horizontal Nav with CSS</a> <span class="commenter">-
 					Thomas Larangeira @ Sept 10, 2010</span>
 				<p class="popup">"This is one of the most recent comments to a
@@ -112,7 +113,7 @@
 		</li>
 		<li>
 			<div class="bubbleInfo">
-				<a href="#"><img src="images/avatar.gif"></a> <a href="#"
+				<a href="#"><img src='<c:url value="/images/avatar.gif" />'></a> <a href="#"
 					class="trigger">Horizontal Nav with CSS</a> <span class="commenter">-
 					Thomas Larangeira @ Sept 10, 2010</span>
 				<p class="popup">"This is one of the most recent comments to a
@@ -121,7 +122,7 @@
 		</li>
 		<li>
 			<div class="bubbleInfo">
-				<a href="#"><img src="images/avatar.gif"></a> <a href="#"
+				<a href="#"><img src='<c:url value="/images/avatar.gif" />'></a> <a href="#"
 					class="trigger">Horizontal Nav with CSS</a> <span class="commenter">-
 					Thomas Larangeira @ Sept 10, 2010</span>
 				<p class="popup">"This is one of the most recent comments to a

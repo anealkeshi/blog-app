@@ -117,7 +117,7 @@ header-login { color: white; float: right;}
 .post h2 a { color: #01567e; text-decoration: none; }
 .post h2 a:hover { color: #000; }
 div.post-title { float: left; width: 585px; }
-div.comment-box { background: url(images/comment_bubble.png) no-repeat; height: 31px; float: right; margin: 3px 0 0 0; padding: 3px 0 0 0; text-align: center; width: 34px; }
+div.comment-box { background: url(../images/comment_bubble.png) no-repeat; height: 31px; float: right; margin: 3px 0 0 0; padding: 3px 0 0 0; text-align: center; width: 34px; }
 div.comment-box a { color: #FFF; font-size: 14px; font-weight: bold; text-decoration: none; }
 div.comment-box a:hover { color: #000; }
 .post img.thumb { border: 1px solid #abe4ff; float: left; margin: 0 10px 0 0; }
@@ -137,14 +137,14 @@ span.fullpost { clear: both; float: right; }
 aside { background: #012b3e; border-radius: 0 0 10px 10px; float: left; font-size: 12px; margin: 0 0 0 75px; -moz-border-radius: 0 0 10px 10px; padding: 0 0 20px 0; width: 300px; }
 aside h2 { color: #FFF; float: left; font-size: 18px; font-weight: bold; padding: 20px; }
 #searchbox { background: #FFF; border: none; border-radius: 5px 0 0 5px; float: left; height: 30px; margin: 0 0 0 20px; -moz-border-radius: 5px 0 0 5px; padding: 0 0 0 10px; width: 226px; }
-#searchbutton { background: url(images/searchbutton.png) no-repeat; border: none; cursor: pointer; float: left; height: 30px; width: 24px; }
+#searchbutton { background: url(../images/searchbutton.png) no-repeat; border: none; cursor: pointer; float: left; height: 30px; width: 24px; }
 aside ul { border-bottom: 1px dotted #015278; float: left; list-style: none; }
 aside li { border-top: 1px dotted #015278; float: left; height: 35px; line-height: 35px; width: 300px;}
 aside li:hover { background: #013953; }
 aside ul li a { color: #33a4d8; float: left; padding: 0 0 0 20px; text-decoration: none; }
 aside ul li a:hover { color: #FFF; }
 aside div.bubbleInfo { position: relative; z-index: 100; }
-aside p.popup { background: url(images/nav-bubble.png) no-repeat left top; color: #FFF; display: none; height: 47px; line-height: 15px; position: absolute; padding: 7px 30px 0 10px; width: 247px; }
+aside p.popup { background: url(../images/nav-bubble.png) no-repeat left top; color: #FFF; display: none; height: 47px; line-height: 15px; position: absolute; padding: 7px 30px 0 10px; width: 247px; }
 aside ul.recent-comment li { height: auto; line-height: 9px; }
 aside ul.recent-comment li a img { border: none; float: left; padding: 0 10px 10px 10px; }
 aside ul.recent-comment li a { display: block; float: none; margin: 10px 0 12px 0; padding: 0; }

@@ -3,6 +3,7 @@ package com.anilkc.blog.domain.service.impl;
 import java.security.Principal;
 import java.util.Date;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import javax.annotation.Resource;
@@ -23,7 +24,6 @@ import com.anilkc.blog.domain.service.TagService;
 import com.anilkc.blog.domain.service.UserRoleService;
 import com.anilkc.blog.domain.service.UserService;
 import com.anilkc.blog.exception.BlogException;
-import com.anilkc.blog.exception.TagException;
 import com.anilkc.blog.exception.UserException;
 
 @Service("userService")
@@ -46,8 +46,8 @@ public class UserServiceImpl implements UserService {
 		user.getCredential().setEnabled(true);
 
 		// Set user role
-		UserRole userRole = new UserRole(user.getCredential(), UserRoleType.ROLE_READER.getValue());
-		user.getCredential().addUserRole(userRole);
+		//UserRole userRole = new UserRole(user.getCredential(), UserRoleType.ROLE_ADMIN.getValue());
+		//user.getCredential().addUserRole(userRole);
 
 		return userDao.add(user);
 
@@ -73,6 +73,11 @@ public class UserServiceImpl implements UserService {
 		}
 		savedUser.setTags(tags);
 		updateUser(savedUser);
+	}
+
+	@Override
+	public List<User> getAllUsers() {
+		return userDao.list();
 	}
 
 }

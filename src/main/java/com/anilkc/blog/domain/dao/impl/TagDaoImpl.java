@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.anilkc.blog.domain.Tag;
+import com.anilkc.blog.domain.User;
 import com.anilkc.blog.domain.dao.TagDao;
 import com.anilkc.blog.exception.TagException;
 
@@ -26,6 +27,15 @@ public class TagDaoImpl extends BaseDaoImpl<Tag, Long>implements TagDao {
 		}
 
 		return tag.get(0);
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Tag> getUserTags(User user) {
+		System.out.println(user.getTags());
+		Query query = currentSession().createQuery("SELECT t from Tag t join User us where us.credential.username=:username");
+		query.setParameter("username", user.getCredential().getUsername());
+		return query.list();
 	}
 
 }

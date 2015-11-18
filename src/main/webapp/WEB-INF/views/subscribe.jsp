@@ -7,10 +7,11 @@
 	<form:form action="subscribe" modelAttribute="user">
 		<fieldset>
 			<table>
-				<c:forEach items="${tags}" var="tag">
+				<c:forEach items="${tags}" var="entry">
 					<tr>
-						<td class="data"><form:checkbox path="tags" value="${tag.tagName}" label="${tag.tagName}" /> <form:errors
+						<td class="data"><input id="${entry.key.tagName}" type="checkbox" name="tags"   value="${entry.key.tagName}"   <c:if test="${entry.value eq true}">checked="checked"</c:if>/><label for="${entry.key.tagName}">${entry.key.tagName}</label> <form:errors
 								path="tags" cssStyle="color:red;" /></td>
+								
 					</tr>
 				</c:forEach>
 				<tr>

@@ -28,11 +28,66 @@
 		<put-attribute name="title" value="Welcome" />
 		<put-attribute name="body" value="/WEB-INF/views/post.jsp" />
 	</definition>
-	
+
 	<definition name="register" extends="baseLayout">
 		<put-attribute name="title" value="User Registration" />
 		<put-attribute name="body" value="/WEB-INF/views/register.jsp" />
 	</definition>
+
+	<definition name="subscribe" extends="baseLayout">
+		<put-attribute name="title" value="User Subscription" />
+		<put-attribute name="body" value="/WEB-INF/views/subscribe.jsp" />
+	</definition>
+
+	<definition name="error" extends="baseLayout">
+		<put-attribute name="title" value="User Subscription" />
+		<put-attribute name="body" value="/WEB-INF/views/error.jsp" />
+	</definition>
+
+
+	<definition name="adminLanding" extends="baseLayout">
+		<put-attribute name="title" value="Admin Landing" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/admin/adminLanding.jsp" />
+	</definition>
+
+
+	<definition name="manageUser" extends="baseLayout">
+		<put-attribute name="title" value="Admin Landing" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/admin/manageUsers.jsp" />
+	</definition>
+
+	<definition name="bloggerLanding" extends="baseLayout">
+		<put-attribute name="title" value="Blogger Landing" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/blogger/bloggerLanding.jsp" />
+		<put-attribute name="aside" value="/WEB-INF/tiles/template/aside.jsp" />
+	</definition>
+	
+	
+	<definition name="readerLanding" extends="baseLayout">
+		<put-attribute name="title" value="Blogger Landing" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/blogger/bloggerLanding.jsp" />
+		<put-attribute name="aside" value="/WEB-INF/tiles/template/aside.jsp" />
+	</definition>
+	
+	<definition name="bloggerPost" extends="baseLayout">
+		<put-attribute name="title" value="Blogger Landing" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/blogger/bloggerPost.jsp" />
+		<put-attribute name="aside" value="/WEB-INF/tiles/template/aside.jsp" />
+	</definition>
+	
+	
+	<definition name="readMore" extends="baseLayout">
+		<put-attribute name="title" value="Blogger Landing" />
+		<put-attribute name="body"
+			value="/WEB-INF/views/blogger/article.jsp" />
+		<put-attribute name="aside" value="/WEB-INF/tiles/template/aside.jsp" />
+	</definition>
+
 
 
 

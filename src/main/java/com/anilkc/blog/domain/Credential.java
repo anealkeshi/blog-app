@@ -87,7 +87,7 @@ public class Credential {
 		this.enabled = enabled;
 	}
 
-	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "user")
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "user")
 	public Set<UserRole> getUserRole() {
 		return this.userRole;
 	}

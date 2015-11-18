@@ -1,7 +1,12 @@
 package com.anilkc.blog.domain.dao;
 
-import com.anilkc.blog.domain.Post;
+import java.util.List;
 
-public interface PostDao extends BaseDao<Post, Long>{
+import com.anilkc.blog.domain.Post;
+import com.anilkc.blog.domain.User;
+
+public interface PostDao extends BaseDao<Post, Long> {
+
+	List<Post> getPostByUser(User user);
 
 }

@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.anilkc.blog.domain.Tag;
+import com.anilkc.blog.domain.User;
 import com.anilkc.blog.domain.dao.TagDao;
 import com.anilkc.blog.domain.service.TagService;
 import com.anilkc.blog.exception.BlogException;
@@ -19,13 +20,23 @@ public class TagServiceImpl implements TagService {
 
 	@Autowired
 	private TagDao tagDao;
-	
+
 	public List<Tag> getAll() {
 		return tagDao.list();
 	}
 
 	public Tag getTagByName(String tagName) throws TagException {
 		return tagDao.findTagByName(tagName);
+	}
+
+	@Override
+	public Tag addtag(Tag tag) {
+		return tagDao.add(tag);
+	}
+
+	@Override
+	public List<Tag> getUserTags(User user) {
+		return tagDao.getUserTags(user);
 	}
 
 }
