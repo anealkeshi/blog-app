@@ -28,6 +28,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.anilkc.blog.custom.LogBeforeMethod;
 import com.anilkc.blog.domain.Credential;
 import com.anilkc.blog.domain.Post;
 import com.anilkc.blog.domain.Tag;
@@ -41,6 +42,7 @@ import com.anilkc.blog.exception.BlogException;
 import com.anilkc.blog.exception.UserException;
 
 @Controller
+@LogBeforeMethod
 public class LoginController {
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(LoginController.class);

@@ -9,4 +9,8 @@ public interface PostDao extends BaseDao<Post, Long> {
 
 	List<Post> getPostByUser(User user);
 
+	List<Post> searchPostByTitle(String searchQuery);
+
+	List<Post> getPostFromDate(Integer limit);
+
 }

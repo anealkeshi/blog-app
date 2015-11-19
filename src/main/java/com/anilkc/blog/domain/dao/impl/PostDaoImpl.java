@@ -23,4 +23,20 @@ public class PostDaoImpl extends BaseDaoImpl<Post, Long>implements PostDao {
 		return query.list();
 	}
 
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Post> searchPostByTitle(String searchQuery) {
+		Query query = currentSession().createQuery("SELECT p from Post p where p.title like :searchQuery");
+		query.setParameter("searchQuery", "%" + searchQuery + "%");
+		return query.list();
+	}
+	
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Post> getPostFromDate(Integer limit){
+		Query query = currentSession().createQuery("SELECT distinct p from Post p order by p.createdDate DESC");
+		query.setFirstResult(0).setMaxResults(limit);
+		return query.list();
+	}
+
 }

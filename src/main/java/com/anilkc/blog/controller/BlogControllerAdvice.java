@@ -8,9 +8,11 @@ import org.springframework.security.access.AccessDeniedException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
+import com.anilkc.blog.custom.LogBeforeMethod;
 import com.anilkc.blog.exception.BlogException;
 
 @ControllerAdvice
+@LogBeforeMethod
 public class BlogControllerAdvice {
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(BlogControllerAdvice.class);

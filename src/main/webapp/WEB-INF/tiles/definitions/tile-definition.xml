@@ -64,30 +64,34 @@
 			value="/WEB-INF/views/blogger/bloggerLanding.jsp" />
 		<put-attribute name="aside" value="/WEB-INF/tiles/template/aside.jsp" />
 	</definition>
-	
-	
+
+
 	<definition name="readerLanding" extends="baseLayout">
 		<put-attribute name="title" value="Blogger Landing" />
 		<put-attribute name="body"
 			value="/WEB-INF/views/blogger/bloggerLanding.jsp" />
 		<put-attribute name="aside" value="/WEB-INF/tiles/template/aside.jsp" />
 	</definition>
-	
+
 	<definition name="bloggerPost" extends="baseLayout">
 		<put-attribute name="title" value="Blogger Landing" />
 		<put-attribute name="body"
 			value="/WEB-INF/views/blogger/bloggerPost.jsp" />
 		<put-attribute name="aside" value="/WEB-INF/tiles/template/aside.jsp" />
 	</definition>
-	
-	
+
+
 	<definition name="readMore" extends="baseLayout">
 		<put-attribute name="title" value="Blogger Landing" />
-		<put-attribute name="body"
-			value="/WEB-INF/views/blogger/article.jsp" />
+		<put-attribute name="body" value="/WEB-INF/views/blogger/article.jsp" />
 		<put-attribute name="aside" value="/WEB-INF/tiles/template/aside.jsp" />
 	</definition>
 
+
+	<definition name="resourceNotFound" extends="baseLayout">
+		<put-attribute name="title" value="User Subscription" />
+		<put-attribute name="body" value="/WEB-INF/views/resourceNotFound.jsp" />
+	</definition>
 
 
 

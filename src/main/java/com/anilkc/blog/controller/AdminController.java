@@ -8,12 +8,16 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.anilkc.blog.custom.AsidePass;
+import com.anilkc.blog.custom.LogBeforeMethod;
 import com.anilkc.blog.domain.UserRoleType;
 import com.anilkc.blog.domain.service.UserRoleService;
 import com.anilkc.blog.domain.service.UserService;
 
 @Controller
+@LogBeforeMethod
 @RequestMapping("/admin")
+@AsidePass
 public class AdminController {
 
 	@Autowired

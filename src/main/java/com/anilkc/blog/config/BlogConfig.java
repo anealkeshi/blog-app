@@ -11,6 +11,7 @@ import org.springframework.beans.factory.config.PropertyPlaceholderConfigurer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.context.annotation.Import;
 import org.springframework.context.support.ReloadableResourceBundleMessageSource;
 import org.springframework.core.io.ClassPathResource;
@@ -36,6 +37,7 @@ import org.springframework.web.servlet.view.tiles3.TilesView;
 // @EnableAsync
 // @EnableScheduling
 // @EnableLoadTimeWeaving
+@EnableAspectJAutoProxy
 @EnableTransactionManagement
 @ComponentScan("com.anilkc.blog")
 @Import(SecurityConfig.class)

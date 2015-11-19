@@ -22,6 +22,8 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 @Entity
 @Table(name = "comments")
 @SecondaryTables({ @SecondaryTable(name = "comment_contents", pkJoinColumns = {
@@ -32,6 +34,7 @@ public class Comment {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 
+	@NotEmpty
 	@Lob
 	@Basic(fetch = FetchType.LAZY)
 	@Column(table = "comment_contents")

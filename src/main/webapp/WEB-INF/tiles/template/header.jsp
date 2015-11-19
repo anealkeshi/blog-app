@@ -8,7 +8,7 @@
 			alt="Blog" height="50" width="100">
 		</a>
 		<security:authorize access="isAuthenticated()">
-			 Welcome ${pageContext.request.userPrincipal.name}!! <a href='<spring:url value="/doLogout"></spring:url>'>Logout</a>
+			 Welcome ${pageContext.request.userPrincipal.name}!! <a href='<spring:url value="/doLogout"></spring:url>'><spring:message code="logout.btn" /></a>
 		</security:authorize>
 
 		<security:authorize access="isAnonymous()">
