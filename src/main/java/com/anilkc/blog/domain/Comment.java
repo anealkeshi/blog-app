@@ -34,7 +34,7 @@ public class Comment {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 
-	@NotEmpty
+	@NotEmpty(message="{comment.cannot.be.empty}")
 	@Lob
 	@Basic(fetch = FetchType.LAZY)
 	@Column(table = "comment_contents")

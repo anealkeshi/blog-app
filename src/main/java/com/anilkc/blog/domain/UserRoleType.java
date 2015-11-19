@@ -18,4 +18,13 @@ public enum UserRoleType {
 		return this.getValue();
 	}
 
+	public UserRoleType getValue(UserRoleType value) {
+		for (UserRoleType e : UserRoleType.values()) {
+			if (e.value.equals(value)) {
+				return e;
+			}
+		}
+		return null;
+	}
+
 }

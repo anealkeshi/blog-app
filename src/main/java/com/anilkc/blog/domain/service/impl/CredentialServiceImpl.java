@@ -16,6 +16,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.anilkc.blog.domain.Credential;
 import com.anilkc.blog.domain.UserRole;
 import com.anilkc.blog.domain.dao.CredentialDao;
 import com.anilkc.blog.domain.service.CredentialService;
@@ -62,6 +63,11 @@ public class CredentialServiceImpl implements CredentialService {
 		List<GrantedAuthority> Result = new ArrayList<GrantedAuthority>(setAuths);
 
 		return Result;
+	}
+
+	@Override
+	public Credential updateCredential(Credential credential) {
+		return credentialDao.update(credential);
 	}
 
 }

@@ -86,6 +86,8 @@ public class BloggerController {
 			BindingResult bindingResult, Model model, Principal principal) throws BlogException {
 
 		if (bindingResult.hasErrors()) {
+			Post post = postService.getPostById(postId);
+			model.addAttribute("post", post);
 			return "readMore";
 		}
 		Post post = postService.addUserCommentToPost(postId, comment, principal);

@@ -99,5 +99,9 @@ public class Credential {
 	public void addUserRole(UserRole userRole) {
 		this.userRole.add(userRole);
 	}
+	
+	public void removeUserRole(UserRole userRole) {
+		this.userRole.remove(userRole);
+	}
 
 }

@@ -62,3 +62,23 @@ $(function () {
     });
   });
 });
+
+function changeUserRole(id,event,role) {
+	//var dataToSend = $(event.target).closest('td').find('input').val();
+	alert(id);
+	event="Add";
+	if($(event.target).is(":checked")){
+		event="Add";
+	}else{
+		event="Remove";
+	}
+	$.ajax({
+		url : '/blog/admin/updateRole?id=' + id+"&event="+event+"&role="+role,
+		type : 'GET',
+		dataType : "json", // Accepts
+	}).done(function(successObject) {
+		
+	}).fail(function(xhr, textStatus, errorThrown) {
+
+	});
+}

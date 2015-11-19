@@ -26,7 +26,7 @@
 
 	<nav>
 		<ul>
-			<li><a href="#"><spring:message code="nav.home" /></a></li>
+			<li><a href="<spring:url value="/"></spring:url>"><spring:message code="nav.home" /></a></li>
 			<li><a href="#"><spring:message code="nav.about.us" /></a></li>
 			<li><a href="#"><spring:message code="nav.contact" /></a></li>
 		</ul>

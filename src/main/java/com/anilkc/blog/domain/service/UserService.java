@@ -20,4 +20,6 @@ public interface UserService {
 	void setUserTags(User user, Principal principal) throws BlogException;
 	
 	List<User> getAllUsers();
+
+	User getUserById(Long id);
 }

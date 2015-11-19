@@ -17,8 +17,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.anilkc.blog.domain.Tag;
 import com.anilkc.blog.domain.User;
-import com.anilkc.blog.domain.UserRole;
-import com.anilkc.blog.domain.UserRoleType;
 import com.anilkc.blog.domain.dao.UserDao;
 import com.anilkc.blog.domain.service.TagService;
 import com.anilkc.blog.domain.service.UserRoleService;
@@ -78,6 +76,11 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public List<User> getAllUsers() {
 		return userDao.list();
+	}
+	
+	@Override
+	public User getUserById(Long id){
+		return userDao.find(id);
 	}
 
 }

@@ -24,13 +24,13 @@
 				<td><input id="userStatus" type="checkbox"  <c:if test="${user.credential.enabled eq true}">checked="checked"</c:if>>
 						<label for="userStatus">Active</label></td>
 				<td><c:forEach items="${user.credential.userRole}" var="userRole">
-						<input id="ROLE_ADMIN" type="checkbox" value="${ROLE_ADMIN}"  <c:if test="${userRole.role == 'ROLE_ADMIN'}">checked="checked"</c:if>>
+						<input id="ROLE_ADMIN" type="checkbox" value="${ROLE_ADMIN}" onclick="changeUserRole(${user.id},event, 'ROLE_ADMIN')"  <c:if test="${userRole.role == 'ROLE_ADMIN'}">checked="checked"</c:if>>
 						<label for="ROLE_ADMIN">ROLE_ADMIN</label>
 						<br>
-						<input id="ROLE_BLOGGER" type="checkbox" value="${ROLE_BLOGGER}"  <c:if test="${userRole.role == 'ROLE_BLOGGER'}">checked="checked"</c:if>>
+						<input id="ROLE_BLOGGER" type="checkbox" value="${ROLE_BLOGGER}" onclick="changeUserRole(${user.id},event, 'ROLE_BLOGGER')" <c:if test="${userRole.role == 'ROLE_BLOGGER'}">checked="checked"</c:if>>
 						<label for="ROLE_BLOGGER">ROLE_BLOGGER</label>
 						<br>
-						<input id="ROLE_READER" type="checkbox" value="${ROLE_READER}"  <c:if test="${userRole.role == 'ROLE_READER'}">checked="checked"</c:if>>
+						<input id="ROLE_READER" type="checkbox" value="${ROLE_READER}" onclick="changeUserRole(${user.id},event, 'ROLE_READER')" <c:if test="${userRole.role == 'ROLE_READER'}">checked="checked"</c:if>>
 						<label for="ROLE_READER">ROLE_READER</label>
 					</c:forEach></td>
 			</tr>
