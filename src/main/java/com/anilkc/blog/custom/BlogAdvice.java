@@ -35,7 +35,7 @@ public class BlogAdvice {
 	}
 
 	@Around(value = "@within(com.anilkc.blog.custom.AsidePass) || @annotation(com.anilkc.blog.custom.AsidePass)")
-	public Object handledMemoize(ProceedingJoinPoint pjp) throws Throwable {
+	public Object handleAsidePass(ProceedingJoinPoint pjp) throws Throwable {
 		Object[] args = pjp.getArgs();
 
 		if (args != null) {
